@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-import 'package:proyek/login.dart';
-import 'package:proyek/home.dart';
+import './login.dart';
+import './home.dart';
 
 // class daftar extends StatelessWidget {
 //   const daftar({

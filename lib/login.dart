@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proyek/daftar.dart';
-import 'package:proyek/home.dart';
+import './daftar.dart';
+import './home.dart';
 
 
 class login extends StatelessWidget {

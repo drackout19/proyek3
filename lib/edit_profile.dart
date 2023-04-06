@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyek/home.dart';
+import './home.dart';
 
 
 class edit_profile extends StatefulWidget {

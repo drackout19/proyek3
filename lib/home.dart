@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proyek/login.dart';
-import 'package:proyek/edit_profile.dart';
+import './login.dart';
+import './edit_profile.dart';
 
 class HalamanUtama extends StatelessWidget {
   const HalamanUtama({super.key});
