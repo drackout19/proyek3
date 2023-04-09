@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import './DetailList.dart';
 import './HalamanEvent.dart';
+import './pageGabungMitra.dart';
+import './widgets/CustomBottomNavigationBar.dart';
 
 void main() {
   runApp(HalamanUtama());
@@ -28,10 +30,6 @@ class _MyAppState extends State<MyApp> {
   //ini untuk navigasinya
   late int index;
 // -------
-  final List<Widget> showWidget = <Widget>[
-    HalamanUtama(),
-    Event(),
-  ];
 
   late String str;
   late int angka;
@@ -127,7 +125,7 @@ class _MyAppState extends State<MyApp> {
               alignment: Alignment.topCenter,
               children: [
                 Container(
-                  width: 500,
+                  width: double.infinity,
                   height: 70,
                   color: Color(0xff46838A),
                 ),
@@ -135,14 +133,15 @@ class _MyAppState extends State<MyApp> {
                   alignment: Alignment.bottomCenter,
                   children: [
                     Container(
-                      width: 300,
+                      width: double.infinity,
                       height: 100,
                       // decoration: BoxDecoration(
                       //   border: Border.all(width: 1),
                       // ),
                     ),
                     Container(
-                      width: 300,
+                      margin: EdgeInsets.only(left: 50, right: 50),
+                      width: double.infinity,
                       height: 56,
                       alignment: Alignment.centerLeft,
                       padding: EdgeInsets.only(left: 15),
@@ -168,7 +167,7 @@ class _MyAppState extends State<MyApp> {
               height: 30,
             ),
             Container(
-              width: 500,
+              width: double.infinity,
               height: 56,
               alignment: Alignment.centerLeft,
               padding: EdgeInsets.only(left: 15),
@@ -248,41 +247,8 @@ class _MyAppState extends State<MyApp> {
       ),
 
       //bottom navigation
-      
-      
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xffF2F2F2),
-        selectedItemColor: Color(0xff61A861),
-        unselectedItemColor: Color(0xffC8C8C8),
-        currentIndex: indexBottom,
-        onTap: (value) {
-          setState(() {
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => showWidget[value],
-            ));
-            indexBottom = value;
-            print(indexBottom);
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.event),
-            label: "Event",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.card_membership),
-            label: "Member",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "Profil",
-          ),
-        ],
-      ),
+
+      bottomNavigationBar: CustomBottomNavigationBar(indexBottom: indexBottom,),
     );
   }
 }
@@ -409,7 +375,7 @@ class ListPetaniTim extends StatelessWidget {
                     children: [
                       Icon(Icons.call, size: 15),
                       Text(
-                        kontak!,
+                        " ${kontak!}",
                         style: TextStyle(fontSize: 12),
                       )
                     ],

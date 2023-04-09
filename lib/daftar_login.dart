@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
                         height: 150,
                         decoration: BoxDecoration(
                         image: DecorationImage(image: 
-                          AssetImage("assets/baletani.jpeg"),
+                          // 
+                          NetworkImage("https://picsum.photos/200/300"),
                           fit: BoxFit.cover,
                       ),
                     ),
