@@ -588,7 +588,7 @@ class _FormProfilState extends State<FormProfil> {
         "${urlHttp.urlHTTP.uri}get_data_profile.php?id_akun=${id_akun.toString()}");
     try {
       var response = await http.get(uri);
-
+git
       var data = jsonDecode(response.body);
       print("Isi data => ${data}");
       Map dataForm = data[0] as Map; //data alamat
