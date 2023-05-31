@@ -1,6 +1,15 @@
+//dependencies package
+import 'dart:convert';
+
+import 'package:flutter_session_manager/flutter_session_manager.dart';
+import 'package:http/http.dart' as http;
+import 'dart:io';
+import 'dart:typed_data';
+import 'init.dart' as urlHttp;
 import 'package:flutter/material.dart';
 import './daftar.dart';
 import './HalamanUtama.dart';
+
 // import './home.dart';
 
 class login extends StatelessWidget {
@@ -27,6 +36,30 @@ class _contentState extends State<content> {
   TextEditingController emailC = TextEditingController();
   TextEditingController passC = TextEditingController();
   bool _obsecureText = true;
+  // dynamic kontakPengguna = await SessionManager().get('kontak');
+  late dynamic visit = false;
+
+  Future<void> getVisit() async {
+    await SessionManager().get("visited_ktp").then((value) async {
+      visit = value;
+    });
+    print(visit);
+  }
+
+  Future<void> hasLogin() async {}
+
+  Future<void> getIdAkun() async {
+    dynamic kontakPengguna = await SessionManager().get('kontak');
+    String uri = "${urlHttp.urlHTTP.uri}get_id_akun.php?kontak=${kontakPengguna.toString()}";
+    var res = await http.get(Uri.parse(uri));
+    var response = jsonDecode(res.body);
+    String id_akun = response[0]['id_akun'];
+    // await SessionManager().set('kontak', kontak);
+    await SessionManager().set('id_akun', id_akun);
+    //print(response[0]['id_akun']);
+    // print("isi responnya => ${response}");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,8 +127,15 @@ class _contentState extends State<content> {
             children: [
               //button login
               ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(
+                onPressed: () async {
+                  //untuk debug gunakan id_akun nya di paten nanti akan get ke database
+                  //await SessionManager().set("id_akun", 2103040);
+                  await getIdAkun();
+                  // await SessionManager().remove("visited"); //hapus aja untuk debug
+                  // await SessionManager().set("visited_ktp", false); //hapus aja untuk debug
+                  // print(await SessionManager().get("visited")); //hapus aja untuk debug
+                  print(await SessionManager().get("kontak")); //hapus aja untuk debug
+                   await Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => HalamanUtama(),
                     ),

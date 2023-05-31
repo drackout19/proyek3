@@ -5,11 +5,18 @@ import '../pageGabungMitra.dart';
 import '../HalamanUtama.dart';
 import '../edit_profile.dart';
 
-class CustomBottomNavigationBar extends StatelessWidget {
+class CustomBottomNavigationBar extends StatefulWidget {
   // const CustomBottomNavigationBar({super.key});
-  CustomBottomNavigationBar({required this.indexBottom });
-  
+  CustomBottomNavigationBar({required this.indexBottom});
+
   late int indexBottom;
+
+  @override
+  State<CustomBottomNavigationBar> createState() =>
+      _CustomBottomNavigationBarState();
+}
+
+class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
 
   final List<Widget> showWidget = <Widget>[
     HalamanUtama(),
@@ -17,20 +24,21 @@ class CustomBottomNavigationBar extends StatelessWidget {
     PageGabungMitra(),
     edit_profile()
   ];
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       backgroundColor: Color(0xffF2F2F2),
       selectedItemColor: Color(0xff61A861),
       unselectedItemColor: Color(0xffC8C8C8),
-      currentIndex: indexBottom,
+      currentIndex: widget.indexBottom,
       onTap: (value) {
         // setState(() {
-          Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => showWidget[value],
-          ));
-          indexBottom = value;
-          print(indexBottom);
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => showWidget[value],
+        ));
+        widget.indexBottom = value;
+        print(widget.indexBottom);
         // });
       },
       items: [

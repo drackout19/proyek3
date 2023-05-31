@@ -3,6 +3,7 @@ import './DetailList.dart';
 import './HalamanEvent.dart';
 import './pageGabungMitra.dart';
 import './widgets/CustomBottomNavigationBar.dart';
+// import 'package:flutter_session_manager/flutter_session_manager.dart';
 
 void main() {
   runApp(HalamanUtama());
@@ -34,6 +35,7 @@ class _MyAppState extends State<MyApp> {
   late String str;
   late int angka;
   late int indexBottom;
+
   final List kategori = [
     {
       "judul": "Tim Baletani",
@@ -73,12 +75,13 @@ class _MyAppState extends State<MyApp> {
   //list widget untuk petani personal
   final List<Widget> listTampilPersonal = <Widget>[
     ListPetaniTim(
-        profilGambar: "https://picsum.photos/200/300",
+        profilGambar:
+            "http://192.168.100.207:8080/proyek3_api/uploads/scaled_Revolution%20Wallpaper%20Naruto%20HD%20Wallpaper%201080p.png",
         nama: "Mang Soleh",
         iconProfile: null,
         judul: "Buruh Jagung",
         alamat: "Desa Lohbener",
-        kontak: "081786346717"),
+        kontak: "081786346716"),
     ListPetaniTim(
         profilGambar: "https://picsum.photos/200/300",
         nama: "Mang Soleh",
@@ -112,6 +115,8 @@ class _MyAppState extends State<MyApp> {
     // listTampil = listTampilTim;
     super.initState();
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -248,7 +253,9 @@ class _MyAppState extends State<MyApp> {
 
       //bottom navigation
 
-      bottomNavigationBar: CustomBottomNavigationBar(indexBottom: indexBottom,),
+      bottomNavigationBar: CustomBottomNavigationBar(
+        indexBottom: indexBottom,
+      ),
     );
   }
 }

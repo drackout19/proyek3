@@ -45,6 +45,7 @@ class _MyAppState extends State<MyApp> {
         children: [
           Column(
             children: [
+              //sebagai pengganti appbar
               Container(
                 alignment: Alignment.centerLeft,
                 height: 60,

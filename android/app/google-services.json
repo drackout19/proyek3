@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "426297503822",
+    "firebase_url": "https://proyek3-66cca-default-rtdb.firebaseio.com",
+    "project_id": "proyek3-66cca",
+    "storage_bucket": "proyek3-66cca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426297503822:android:d352f475724734ef15d31f",
+        "android_client_info": {
+          "package_name": "com.example.bale_tani2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "426297503822-chlne8egvkuh1mf753g9iei26ge1m7is.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4jLxPKj1_zzAo8xk8NS2Yy0MyzSqSqIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "426297503822-chlne8egvkuh1mf753g9iei26ge1m7is.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
