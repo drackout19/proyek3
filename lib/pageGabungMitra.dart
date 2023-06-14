@@ -56,7 +56,7 @@ class _PageGabungMitraState extends State<PageGabungMitra> {
       Map dataMap = isBuruhTani[0] as Map;
       // ratingBuruh = double.parse(dataMap['rating']);
       // jumlahTersewa = int.parse(dataMap['jumlah_tersewa']);
-      print(dataMap["status"]);
+      //print(dataMap["status"]);
       // statusMap = status[0] as Map;
       //print(statusMap['status']);
       return dataMap['status'];
@@ -265,6 +265,7 @@ class _PageGabungMitraState extends State<PageGabungMitra> {
                       title: Text("Baletani Tim"),
                       content: Text(
                           "Anda belum di ijinkan akses untuk daftar menjadi Member BaleTani, segera daftar menjadi buruh tani terlebih dahulu!"),
+
                       actions: [
                         TextButton(
                           child: Text(
